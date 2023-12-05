@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+
+
+
+    <!-- -----style-js------ -->
+    <link rel="stylesheet" href="js/style.js">
+
+
+
+
+    <script>
+        function changeColor() {
+            var textColor = document.getElementById("colorInput").value;
+            var elements = document.getElementsByClassName("changeableText");
+
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = textColor;
+            }
+        }
+    </script>
+    <script>
+        function changeFontFamily() {
+            var select = document.getElementById("fontSelect");
+            var newFont = select.options[select.selectedIndex].value;
+            document.body.style.fontFamily = newFont;
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <div class="container-fluid m-auto">
+        <div class="row justify-content-between align-items-center border pt-1 pb-1">
+            <div class="col-4 col-sm-1 col-md-3">
+                Logo
+            </div>
+            <div class="col-8 col-sm-2 col-md-3 fw-bold">
+                <h2> Category</h2>
+            </div>
+            <div class="col-4 col-sm-2 col-md-3 input-search">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+            <div
+                class="col-8 col-sm-5 col-md-3 d-flex justify-content-end align-items-center text-start admin-img-bell">
+                <div class=" not-bell">
+                    <a href="#" class="rounded text-none" style="background-color: #ff6000;">
+                        <i class="bi bi-bell-fill"></i>
+                    </a>
+                </div>
+                <div class="admin-img">
+                    <div>
+                        <a href="#" class="d-flex justify-content-center align-items-center text-none text-color">
+                            <img src="img/admin.png" alt="">
+
+
+                            <div>
+                                <p class="m-0">Chetan Kumar</p>
+                                <span>
+                                    Adimn
+                                </span>
+                            </div>
+
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row pt-2 border justify-content-center ">
+            <div class="col-12 col-sm-12 col-md-3 border pt-2 ">
+                <ul class="list-group list-group-flush border rounded">
+                    <li class="list-group-item ">
+                        <a href="#" class="text-none  text-color"> <i class="bi bi-pie-chart-fill"></i> Dasboard</a>
+                    </li>
+                    <li class="list-group-item active">
+                        <a href="#" class="text-none  active-text"> <i class="bi bi-border-center"></i> Category</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="text-none text-color"> <i class="bi bi-person-fill"></i> User list</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="text-none text-color"> <i class="bi bi-people-fill"></i> Vender list</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="text-none text-color"> <i class="bi bi-gear"></i> Service list</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="text-none text-color"> <i class="bi bi-person-fill-gear"></i> Account
+                            sitting</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-12 col-md-9  border pt-2">
+
+                <div class="row justify-content-between align-items-center ">
+                    <div class="col-md-6">
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <label for="fileUpload">Select a Logo:</label>
+                            <input type="file" id="fileUpload" name="fileUpload">
+                            <br><br>
+
+                            <a href=""
+                                class="text-none text-color p-2 bg-color-1  rounded active-text fw-bold">Uplode</a>
+                        </form>
+                    </div>
+                    <div class="col-md-6 pt-2">
+                        <p class="changeableText">This is some text that will change color.</p>
+
+
+                        <input type="color" id="colorInput">
+                        <a href="" onclick="changeColor()"class=" text-none text-color p-2 bg-color-1  rounded active-text fw-bold">Done </a>
+
+                    </div>
+                    <div class="col-md-6 pt-2">
+                        <p>This is a sample text to demonstrate font change.</p>
+
+                        <label for="fontSelect">Select a font:</label>
+                        <select id="fontSelect">
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="Times New Roman, serif">Times New Roman</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                            <option value="Courier New, monospace">Courier New</option>
+                            <option value="Roman">Roman</option>
+                            <!-- Add more font options here -->
+                        </select>
+
+                        
+                        <a onclick="changeFontFamily()"class=" text-none text-color p-2 bg-color-1  rounded active-text fw-bold">Change Font </a>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- -----style-js------ -->
+    <script src="js/style.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <script>
+        const xArray = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        const yArray = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+        // Define Data
+        const data = [{
+            x: xArray,
+            y: yArray,
+            mode: "lines"
+        }];
+
+        // Define Layout
+        const layout = {
+            xaxis: { range: [40, 160], title: "Square Meters" },
+            yaxis: { range: [5, 16], title: "Price in Millions" },
+            title: "House Prices vs. Size"
+        };
+
+        // Display using Plotly
+        Plotly.newPlot("myPlot", data, layout);
+    </script>
+
+
+
+    ​
+    <script>
+        var xyValues = [
+            { x: 50, y: 7 },
+            { x: 60, y: 8 },
+            { x: 70, y: 8 },
+            { x: 80, y: 9 },
+            { x: 90, y: 9 },
+            { x: 100, y: 9 },
+            { x: 110, y: 10 },
+            { x: 120, y: 11 },
+            { x: 130, y: 14 },
+            { x: 140, y: 14 },
+            { x: 150, y: 15 }
+        ];
+
+        new Chart("myChart", {
+            type: "scatter",
+            data: {
+                datasets: [{
+                    pointRadius: 4,
+                    pointBackgroundColor: "rgb(0,0,255)",
+                    data: xyValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    xAxes: [{ ticks: { min: 40, max: 160 } }],
+                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
